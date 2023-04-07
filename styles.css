@@ -1,0 +1,403 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:black;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    min-width: 1300px;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.sideNav{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items:center;
+    height: 100vh;
+    width: 18.5%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:black;
+    position: sticky;
+    z-index: 1;
+    top:0;
+    bottom:0;
+    left:0;
+    border-right: 1px solid  rgb(128, 128, 128,40%);
+}
+.sideNav-list{
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+}
+.sideNav-list .sideNav-item .home{
+    color: white;
+    position: relative;
+}
+
+.sideNav-list .sideNav-item .home::after{
+content: '.';
+position: absolute;
+font-size: 4rem;
+top: -3.4rem;
+left:.6rem;
+height: 2px;
+color:#1D9BF0;
+z-index: 10;
+}
+.sideNav-list .sideNav-item .notification{
+    color:white;
+    font-size: .7rem;
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
+    background-color:#1D9BF0;
+    padding: .2rem .5rem;
+    border-radius: 20px;
+}
+.sideNav-list .sideNav-item{
+    position: relative;
+    padding: 1rem .4rem;
+}
+.sideNav-list .sideNav-item .sideNav-link{
+    padding: .7rem 1rem;
+}
+.sideNav-link .list-detail{
+    transition: all ease-in-out 200ms;
+    padding-left: 1rem;
+}
+.sideNav-item .sideNav-link{
+    text-decoration: none;
+    color: white;
+    transition: all ease-out 200ms;
+}
+.sideNav-item .sideNav-link:hover:not(.tweet){
+  cursor: pointer;
+  background-color:rgb(128, 128, 128,18%);
+  border-radius: 30px;
+}
+
+.sideNav-link i{
+    /* position: relative; */
+    font-size: 1.2rem;
+}
+.tweet-btn{
+    border: 0;
+    color: white;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: .8rem 4rem;
+    background-color:#1D9BF0;
+}
+.tweet-btn:hover{
+    cursor: pointer;
+}
+.profile-details{
+    display:flex;
+    gap: .5rem;
+    color: white;
+    padding-bottom: 1rem;
+}
+.profile-details img{
+    border-radius: 50%;
+}
+.profile-details .username{
+    font-size: small;
+    color: gray;
+}
+.profile-details .profile{
+    align-self: center;
+}
+.profile-details i{
+    align-self: center;
+    padding-left: 1.5rem;
+}
+
+/* MAIN */
+.wrapper .main{
+    width:44.7%;
+    border-right: 1px solid rgb(128, 128, 128,40%);
+
+}
+.main .header{
+    position: sticky;
+    top: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 104px;
+    border-bottom: 1px solid rgb(128, 128, 128,40%);
+}
+.main h3{
+    padding-left:1rem;
+}
+.main ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+
+}
+.header ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.header ul li .active::after{
+    content: '';
+    position: absolute;
+    background-color:#1D9BF0;
+    height: 4px;
+    width: 100%;
+    bottom: -1rem;
+    right: .1rem;
+    border-radius: 50px;
+    transition: all ease-out 100ms;
+}
+
+.main .tweet-space{
+  height:114px;
+  border-bottom: 1px solid rgb(128, 128, 128,40%);
+  display: flex;
+  gap: .5rem;
+  padding: .5rem 1rem;
+}
+.icon-list{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.icon-list i{
+    opacity: .5;
+   color: #1D9BF0;
+}
+.tweet-space img{
+    border-radius: 50%;
+}
+.space{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .2rem 0;
+}
+.space input[type="text"]{
+    padding-top: .8rem;
+    margin-left: .1rem;
+    color: white;
+    caret-color:black;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}
+.space input[type="text"]::placeholder{
+    font-size: 1.2rem;
+}
+.space .icons{
+    display: flex;
+    justify-content:space-between;
+}
+.space-tweet{
+    border:0;
+    outline:0;
+    border-radius:20px;
+    color: white;
+    padding: .6rem 1.2rem;
+    background-color:#1D9BF0;
+    align-self: flex-end;
+    opacity: 0.5;
+}
+.tweetNumber{
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#1D9BF0;
+    border-bottom: 1px solid rgb(128, 128, 128,40%);
+}
+.tweetNumber span{
+    font-weight: bold;
+}
+.liveTweet{
+    border-bottom: 1px solid rgb(128, 128, 128,40%);
+    display: flex;
+    gap: .6rem;
+    padding-left:.6rem;
+}
+.liveTweet .live-Image{
+    flex: 1 1 20%;
+    border-radius: 50%;
+    padding: .2rem;
+    margin-top: .39rem;
+}
+.liveTweet .content{
+  flex: 1 1 900%;
+}
+.content--image{
+    width: 510px;
+    height: 250px;
+    border-radius: 15px;
+    margin-top: .5rem;
+}
+.liveTweet  .contact{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.liveTweet .contact .twitterId,
+ .menu{
+    color: gray;
+}
+.liveTweet .content .innerFlex{
+    display: flex;
+    padding-top: .5rem;
+}
+.liveTweet .content .innerFlex span{
+font-size: .8rem;
+}
+.innerFlex .menu{
+    margin-left: 60%;
+}
+.liveTweet .contact p {
+    font-size: 0.9rem;
+}
+.liveTweet .reactions{
+    display: flex;
+    margin-top: .2rem;
+    gap: 2.1rem;
+    align-items: start;
+    /* justify-content: space-around; */
+}
+.liveTweet .reactions > div {
+    margin: .3rem 0;
+    font-size: .8rem;
+    color: gray;
+}
+.liveTweet .reactions > div:hover{
+    cursor: pointer;
+}
+.reactions span {
+    margin-left: 1rem;
+}
+.loadMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.showMore{
+    cursor:pointer;
+    border: 0;
+    outline: 0;
+    background-color: #1D9BF0;
+    font-weight: 550;
+    color:white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+}
+.asideRight{
+    display: flex;
+    flex-direction: column;
+    gap:.9rem;
+    padding-top: 10px;
+    width:27%;
+    position:sticky;
+    top:0;
+
+}
+.asideRight .mySearch{
+    position: sticky;
+    top: 0;
+    /* bottom: 0; */
+    height: 43.1px;
+    width: 305px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 70px;
+    background-color:rgb(44, 42, 42);
+}
+.asideRight .mySearch i {
+    height: 18.75px;
+    width:31px;
+    position: absolute;
+    top: .8rem;
+    left: 1rem;
+ color: #767676;
+}
+.asideRight .mySearch input{
+    color: white;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: .8rem;
+    left: 4rem;
+     background: transparent;
+}
+.asideRight .mySearch input::placeholder{
+    font-size: .9rem;
+}
+.asideRight .trends{
+    position: sticky;
+    top: 0;
+     height: auto;
+     width: 305px;
+     margin: 0 auto;
+     border-radius: 15px;
+    background-color:rgb(44, 42, 42);
+}
+.asideRight .trends h4{
+    margin:1rem;
+}
+.asideRight .trends .trend{
+    margin-top:20px ;
+    margin-left: 20px;
+}
+.trends .trend .fa-solid {
+    font-size: .6rem;
+    color: #767676;
+    margin-left: 155px;
+}
+.trends .first-child{
+    font-size: .8rem;
+    color: #767676;
+}
+.trends .trend h6{
+    color: #767676;
+}
+.trends .trend:last-child{
+    margin-bottom: 20px;
+}
+.stickyMessage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: .7rem;
+    color: white;
+    font-weight: 600;
+    background-color:black;
+    box-shadow: 0 0 5px 1px whitesmoke, 0 0 3px 1px gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 52px;
+    width: 400px;
+    position: sticky;
+    bottom:-.5rem;
+    left: 58rem;
+
+}
+.stickyMessage h4{
+    margin-right: 15rem;
+}
+
+
